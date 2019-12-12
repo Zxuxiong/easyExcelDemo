@@ -1,4 +1,4 @@
-package com.xuxiong.easyexceldemo.easyexcel;
+package com.xuxiong.easyexceldemo.util.easyexcel;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;

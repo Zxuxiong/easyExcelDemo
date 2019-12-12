@@ -1,4 +1,4 @@
-package com.xuxiong.easyexceldemo.easyexcel;
+package com.xuxiong.easyexceldemo.util.easyexcel;
 
 
 import org.apache.poi.ss.usermodel.IndexedColors;

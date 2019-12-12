@@ -1,4 +1,4 @@
-package com.xuxiong.easyexceldemo.easyexcel;
+package com.xuxiong.easyexceldemo.util.easyexcel;
 
 import org.apache.poi.ss.usermodel.IndexedColors;
 
@@ -11,12 +11,7 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        //////////////
-        List<List<String>> dataStr = new ArrayList<>();
-        List<String> strList = new ArrayList<>();
-        strList.add("aaaa");
-        dataStr.add(strList);
-
+        //设置需要导出的字段名
         List<Set<String>> includeColumnFiledNamesList = new ArrayList<>();
         Set<String> includeColumnFiledNames = new HashSet<String>(){{add("name");add("phone");}};
         includeColumnFiledNamesList.add(includeColumnFiledNames);
@@ -24,10 +19,10 @@ public class Test {
         includeColumnFiledNamesList.add(includeColumnFiledNames1);
 
 
+        //根据需要设置模式
         EasyExcelBuilder write = new EasyExcelBuilder()
-                .buildDataModels(dataStr)
-                .buildFileName("tttttx")
-                .buildSheetName(Arrays.asList("aaa","bbb"))
+                .buildFileName("文件名称")
+                .buildSheetName(Arrays.asList("第一个sheet","第二个sheet"))
 //                .buildOssPath("excel/default/201906/")
                 .buildIncludeColumnFiledNames(includeColumnFiledNamesList)
 //                .buildExcludeColumnFiledNames(includeColumnFiledNamesList)
