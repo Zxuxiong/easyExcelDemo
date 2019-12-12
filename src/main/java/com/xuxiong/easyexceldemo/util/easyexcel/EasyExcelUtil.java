@@ -80,11 +80,12 @@ public class EasyExcelUtil {
 
             //需要同步到oss
             String ossPath = easyExcelBuilder.getOssPath();
-            if(StringUtils.isEmpty(ossPath)){
+            if(!StringUtils.isEmpty(ossPath)){
                 if (ossPath.startsWith("/")) {
                     ossPath = ossPath.substring(1);
                 }
                 ///######## 该处为上传文件的逻辑 上传完文件会进行删除原文件
+//                AliOssClientUtil.upload(filePath, ossPath + easyExcelBuilder.getFileName());
                 //删除本地文件
                 try{
                     new File(filePath).delete();

@@ -1,16 +1,21 @@
-package com.xuxiong.easyexceldemo.util.easyexcel;
+package com.xuxiong.easyexceldemo.util;
 
+import com.xuxiong.easyexceldemo.util.easyexcel.Demo;
+import com.xuxiong.easyexceldemo.util.easyexcel.EasyExcelBuilder;
+import com.xuxiong.easyexceldemo.util.easyexcel.EasyExcelUtil;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
 /**
  * @author 许兄
- * Created on 2019/12/11
+ * Created on 2019/12/12
  */
-public class Test {
+public class EasyExcelUtilTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void writeExcel(){
         //设置需要导出的字段名
         List<Set<String>> includeColumnFiledNamesList = new ArrayList<>();
         Set<String> includeColumnFiledNames = new HashSet<String>(){{add("name");add("phone");}};
@@ -35,7 +40,6 @@ public class Test {
         data.add(data("b列"));
         EasyExcelUtil.writeExcel(write, Demo.class, data);
     }
-
     private static List<Demo> data(String text){
         List<Demo> demos = new ArrayList<>();
         Demo demo;
